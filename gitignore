@@ -1,0 +1,23 @@
+# MacOS
+.DS_Store
+
+# Logs
+*.log
+
+# System files
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+
+# Node modules (if needed later)
+node_modules/
+
+# AWS CLI cache
+.aws/
+
+# Backup files
+*~
