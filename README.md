@@ -66,6 +66,7 @@ Bucket S3 (site statique + accès privé via OAI)
    * Désactiver l’accès public.
    * Activer l’hébergement statique.
    * Uploader un fichier `index.html`.
+
 ![](img/bucket/create-bucket1.PNG)
 ![](img/bucket/create-bucket2.PNG)
 ![](img/bucket/create-bucket3.PNG)
@@ -92,6 +93,7 @@ Bucket S3 (site statique + accès privé via OAI)
    * Activer la redirection vers HTTPS.
    * Définir le fichier `index.html` comme default root object.
    * Laisse les autres options par défaut et clique sur Create distribution.
+
 ![](img/cloudfront/create-cf1.PNG)
 ![](img/cloudfront/create-cf2.PNG)
 ![](img/cloudfront/create-cf3.PNG)
@@ -106,6 +108,7 @@ Bucket S3 (site statique + accès privé via OAI)
 
 3. **Configurer la bucket policy** pour permettre l’accès uniquement via CloudFront (en liant l’OAI).
 Voici un exemple de bucket policy à ajouter manuellement :
+```json
 {
         "Version": "2008-10-17",
         "Id": "PolicyForCloudFrontPrivateContent",
@@ -126,6 +129,9 @@ Voici un exemple de bucket policy à ajouter manuellement :
             }
         ]
 }
+
+```
+
 ![](img/cloudfront/add-policy1.PNG)
 ![](img/cloudfront/add-policy2.PNG)
 ![](img/cloudfront/add-policy3.PNG)
@@ -133,12 +139,12 @@ Voici un exemple de bucket policy à ajouter manuellement :
 ![](img/cloudfront/add-policy5.PNG)
 ![](img/cloudfront/add-policy6.PNG)
 
-4. **Tester** : accéder à la distribution CloudFront pour voir le site.
+5. **Tester** : accéder à la distribution CloudFront pour voir le site.
 ![](img/teste/teste1.PNG)
 ![](img/teste/teste2.PNG)
 ![](img/teste/teste3.PNG)
 
-5. 🧹**Nettoyage des ressources (important)** :
+6. 🧹**Nettoyage des ressources (important)** :
 
    * Supprimer la distribution CloudFront (⚠️ \~15-30 minutes de désactivation).
    * Supprimer le compartiment S3.
